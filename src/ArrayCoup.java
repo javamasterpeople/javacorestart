@@ -14,10 +14,10 @@ public class ArrayCoup {
         // Заполняем массив
         for (int i = 0; i < array.length; i++)
             array[i] = rand.nextInt(1000);
+
         // распечатываем массив
         System.out.println("Исходный массив:");
-        for (int i = 0; i < array.length; i++)
-            System.out.print("[" + array[i] + "] ");
+        print(array);
 
         //переворачиваем массив
         for (int i = 0; i < array.length / 2; i++) {
@@ -28,6 +28,11 @@ public class ArrayCoup {
 
         // распечатываем массив
         System.out.println("\nПеревёрнутый массив:");
+        print(array);
+    }
+
+    // распечатываем массив
+    static void print (int[] array){
         for (int i = 0; i < array.length; i++)
             System.out.print("[" + array[i] + "] ");
     }
