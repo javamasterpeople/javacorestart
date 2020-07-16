@@ -7,14 +7,43 @@ task 5
 
 public class CompareNumbers {
     public static void main(String[] args) {
-        int numberOriginal = 1234; // input data
-        int numberIndex1 = (numberOriginal / 1000) % 10;;
-        int numberIndex2 = (numberOriginal / 100) % 10;;
-        int numberIndex3 = (numberOriginal / 10) % 10;
-        int numberIndex4 = numberOriginal % 10;
-        System.out.println("Дано число " + numberOriginal + " цифры числа различны ? " +
-                ((numberIndex1 != numberIndex2) && (numberIndex1 != numberIndex3) && (numberIndex1 != numberIndex4)
-                && (numberIndex2 != numberIndex3) && (numberIndex2 != numberIndex4) && (numberIndex3 != numberIndex4)));
+        int numberOriginal = 125687; // input data
+        int counter = 0; // счётчик в который записываем количество цифр в числе
+        boolean result = false;
+        // Подсчёт количества цифр в числе
+        for (int tempNumber = numberOriginal;tempNumber > 0 ; counter++) {
+            tempNumber /= 10;
+        }
 
+        int [] array = new int [counter];
+
+        //заполняем массив
+        for (int i = 0; i < array.length; i++){
+            array[i] = (int) ((numberOriginal / Math.pow(10, counter - 1)) % 10);
+            counter--;
+        }
+
+        // проверка повторяются ли числа
+        for (int i = 0; i < array.length - 1; i++){
+            for (int j = i + 1; j < array.length; j++){
+                if (array[i] == array[j]){
+                    result = true;
+                }
+            }
+        }
+
+        // если цифра одна в числе
+        if (array.length == 1){
+            result = true;
+        }
+
+        System.out.println("Проверяем число: " + numberOriginal);
+
+        if (result){
+            System.out.println("Числа не различны");
+        }
+        else {
+            System.out.println("Все числа различны");
+        }
     }
 }
