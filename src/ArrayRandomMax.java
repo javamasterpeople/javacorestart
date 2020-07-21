@@ -8,19 +8,38 @@ import java.util.Random;
 
 public class ArrayRandomMax {
     public static void main(String[] args) {
+        int [] array = createArray(); // создаём массив
+        System.out.println("Сгенерирован массив: ");
+        print(array);
+        System.out.println("\nМаксимальный элемент массива: " + findMax(array));
+    }
+
+    //метод заполнения массива
+    static int[] createArray (){
         Random rand = new Random();
-        int maxNumber = 0; // максимально число в массиве
         int arraySize = rand.nextInt(30); // размерность массива создаваемого
         int [] array = new int [arraySize]; // создаём массив
-        // Заполняем массив
-        for (int i = 0; i < array.length; i++)
-            array[i] = rand.nextInt(100);
-        //ищем максимальное и выводим массив
         for (int i = 0; i < array.length; i++) {
-            System.out.printf("[" + array[i] + "] ");
-            if (array[i] > maxNumber)
-                maxNumber = array[i];
+            array[i] = rand.nextInt(100);
         }
-        System.out.println("\nНаибольшее число:" + maxNumber);
+        return array;
+    }
+
+    //метод поиска максимального элемента массива
+    static int findMax(int[] array){
+        int max = array[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max) {
+                max = array[i];
+            }
+        }
+        return max;
+    }
+
+    //печать массива
+    static void print (int [] array){
+        for(int i: array){
+            System.out.print("[" + i + "] ");
+        }
     }
 }

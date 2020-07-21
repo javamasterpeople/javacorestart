@@ -5,15 +5,19 @@ task 9
  */
 
 
+import java.util.Random;
+
 public class NumberMultiplication {
     public static void main(String[] args) {
-        double result = 1;
+        Random rand = new Random();
+        long result = 1;
         int n = 1;
-        int x = (int)(Math.random() * 20);
+        int x = rand.nextInt(20);
         while (n <= x){
-            result *= n;
+            result *= (int)n;
             n++;
         }
-        System.out.println("Факториал числа " + x + " равен " + result);
+        System.out.print("Факториал числа " + x + " равен ");
+        System.out.printf("%,d", result);
     }
 }

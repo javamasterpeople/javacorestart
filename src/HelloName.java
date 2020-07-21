@@ -6,6 +6,7 @@ task 2
 
 public class HelloName {
     public static void main(String[] args) {
-        System.out.printf("Hello Viachaslau");
+        String name = "Viachaslau";
+        System.out.printf("Hello " + name);
     }
 }

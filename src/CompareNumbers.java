@@ -7,7 +7,7 @@ task 5
 
 public class CompareNumbers {
     public static void main(String[] args) {
-        int numberOriginal = 125687; // input data
+        int numberOriginal = 1234567; // input data
         int counter = 0; // счётчик в который записываем количество цифр в числе
         boolean result = false;
         // Подсчёт количества цифр в числе
@@ -34,7 +34,7 @@ public class CompareNumbers {
 
         // если цифра одна в числе
         if (array.length == 1){
-            result = true;
+            result = false;
         }
 
         System.out.println("Проверяем число: " + numberOriginal);
