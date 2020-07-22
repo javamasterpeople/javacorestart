@@ -6,14 +6,26 @@ task 10
 
 public class Fac {
     public static void main(String[] args) {
-        byte indexStart = 10;
-        byte indexEnd = 15;
+        int indexStart = 10;
+        int indexEnd = 15;
+        long result = countStart(indexStart);
         for (int i = indexStart; i <= indexEnd; i++) {
-            long result = 1;
-            for (int j = 1; j <= i; j++)
-                result = (long) result * j;
-            System.out.println("Факториал числа " + i + " равен " + result);
+            result = (long) result * i;
+            System.out.printf("Факториал числа " + i + " равен ");
+            System.out.printf("%,d", result);
+            System.out.println("");
         }
     }
+
+    // подсчёт стартового числа
+    static long countStart(int indexStart){
+        long result = 1;
+        for (int i = 1; i < indexStart; i++){
+            result = (long) result * i;
+        }
+        return result;
+    }
 }
+
+
 
