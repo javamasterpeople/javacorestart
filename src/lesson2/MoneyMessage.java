@@ -1,4 +1,4 @@
-/*
+package lesson2;/*
 Viachaslau
 Homework lesson 2
 task 8
